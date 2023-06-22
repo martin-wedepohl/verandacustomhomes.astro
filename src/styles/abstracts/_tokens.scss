@@ -1,0 +1,141 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "sizes" as *;
+
+// Contextual
+$color-text-default: $color-primary-700;
+$color-background-default: $color-neutral-100;
+$color-text-interactive-default: $color-primary-400;
+$color-text-interactive-hover: $color-primary-500;
+
+$letter-spacing-loose: 0.16em;
+$letter-spacing-wide: 0.25em;
+
+// Body
+$body-font-family: $font-family-base;
+$body-font-size: $font-size-400;
+$body-line-height: 1.5;
+$body-font-weight: $font-weight-default;
+$body-text-color: $color-text-default;
+$body-background-color: $color-background-default;
+
+$link-color: $color-text-interactive-default;
+$link-color-hover: $color-text-interactive-hover;
+
+$heading-font-family: $font-family-accent;
+$heading-color-default: $body-text-color;
+$heading-font-weight: $font-weight-bold;
+$heading-letter-spacing: $letter-spacing-loose;
+$heading-line-height: 1;
+$heading-text-transform: uppercase;
+
+// Layout
+$grid-gap: $size-6;
+$flex-group-gap: $size-4;
+
+$hero-padding-block: clamp(15rem, 15vh, 20rem);
+$section-padding-block: clamp(5rem, 10vh, 6rem);
+
+$card-body-padding: $size-8;
+
+$container-min-margin-inline: $size-4;
+$container-max-width-narrow: 40rem;
+$container-max-width: 64rem;
+$container-max-width-wide: 75rem;
+
+// Border-radius
+$border-radius-1: $size-2;
+$border-radius-2: $size-4;
+
+// Shadows
+$box-shadow-1: 0 0 1px 1px $color-primary-400;
+$box-shadow-2: 0 0 $size-1 $size-2 $color-primary-400;
+
+// Buttons
+$button-font-family: $body-font-family;
+$button-font-size: $body-font-size;
+$button-font-weight: $font-weight-bold;
+$button-text-transform: none;
+$button-padding: 0.75em 2em;
+$button-border: 0;
+$button-border-radius: $border-radius-1;
+
+$button-accent-color: $color-neutral-100;
+$button-accent-background: $color-accent-400;
+$button-accent-color-hover: $color-neutral-100;
+$button-accent-background-hover: $color-accent-500;
+
+$button-primary-color: $color-neutral-100;
+$button-primary-background: $color-primary-500;
+$button-primary-color-hover: $color-neutral-100;
+$button-primary-background-hover: $color-primary-500;
+
+// Cards
+$card-flow-spacing: $size-2;
+$card-padding: $size-8;
+$card-background-default: $color-neutral-100;
+$card-color-default: $color-neutral-900;
+$card-font-family: $body-font-family;
+$card-line-height: 1.25;
+$card-heading-color-default: $card-color-default;
+$card-heading-font-family: $font-family-accent;
+$card-heading-text-transform: uppercase;
+$card-heading-letter-spacing: $letter-spacing-loose;
+$card-heading-font-weight: $font-weight-bold;
+$card-heading-font-size: $font-size-500;
+$card-heading-line-height: 1.4;
+$card-border-radius: $border-radius-2;
+$card-box-shadow: $box-shadow-1;
+$card-box-shadow-hover: $box-shadow-2;
+
+// Site Header
+$site-header-font-family: $font-family-accent;
+$site-header-background-color: $color-neutral-100;
+$site-header-color: $color-primary-700;
+$site-header-block-padding: $size-2;
+$site-header-inline-padding: $size-4;
+$site-header-padding: $site-header-block-padding $site-header-inline-padding;
+$side-header-margin: 0;
+$site-header-justification: space-between;
+$site-header-alignment: center;
+$logo-height: 50px;
+$logo-width: 50px;
+$site-logo-height: $logo-height;
+$site-logo-width: $logo-width;
+$site-header-height: calc($site-logo-height + 2 * $site-header-block-padding);
+$site-header-z-index: 1000;
+
+// Navigation
+$navigation-color: $site-header-color;
+$navigation-color-hover: $color-primary-400;
+$navigation-font-family: $font-family-accent;
+$navigation-font-size: $font-size-400;
+$navigation-font-weight: $font-weight-bold;
+$navigation-letter-spacing: $letter-spacing-wide;
+$navigation-spacing: $size-9;
+$navigation-z-index: calc($site-header-z-index + 1);
+$navigation-toggle-z-index: calc($navigation-z-index + 1);
+
+// Forms
+$form-label-color: $body-text-color;
+$form-label-font-family: $body-font-family;
+$form-label-font-weight: $font-weight-bold;
+$form-label-font-size: $body-font-size;
+
+$form-input-color: $body-text-color;
+$form-input-font-family: $body-font-family;
+$form-input-font-weight: $font-weight-semi-bold;
+$form-input-font-size: $body-font-size;
+$form-input-background-color: $color-neutral-100;
+$form-input-border-default: 3px solid $color-primary-200;
+$form-input-border-focus: 3px solid $color-primary-400;
+$form-input-padding: $size-3;
+$form-input-border-radius: $border-radius-1;
+
+$form-placeholder-color: $color-primary-400;
+$form-placeholder-font-family: $form-input-font-family;
+$form-placeholder-font-weight: $form-input-font-weight;
+$form-placeholder-font-size: $body-font-size;
+
+// Grid
+$grid-min-size: 250px;

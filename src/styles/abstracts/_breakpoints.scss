@@ -1,0 +1,9 @@
+$bpsm: 480;
+$bpmd: 720;
+$bplg: 1040;
+
+$breakpoints: (
+  small: 30em,  // 480px
+  medium: 45em, // 720px
+  large: 65em,  // 1040px
+);

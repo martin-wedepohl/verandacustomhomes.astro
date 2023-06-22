@@ -1,0 +1,46 @@
+$-clr-white: hsl(0, 0%, 100%);
+$-clr-black: hsl(0, 0%, 13%);
+$-clr-black-overlay: hsl(0, 0%, 13%, .75);
+
+$-clr-brown-300: hsl(22, 36%, 69%);
+$-clr-brown-400: hsl(22, 36%, 59%);
+$-clr-brown-500: hsl(22, 36%, 49%);
+
+$-clr-green-100: hsl(165, 54%, 53%);
+$-clr-green-200: hsl(165, 54%, 43%);
+$-clr-green-400: hsl(165, 54%, 33%);
+$-clr-green-500: hsl(165, 54%, 23%);
+$-clr-green-700: hsl(165, 54%, 13%);
+
+$colors: (
+  "neutral": (
+    "100": $-clr-white,
+    "900": $-clr-black,
+  ),
+  "accent": (
+    "300": $-clr-brown-300,
+    "400": $-clr-brown-400,
+    "500": $-clr-brown-500,
+  ),
+  "primary": (
+    "100": $-clr-green-100,
+    "200": $-clr-green-200,
+    "400": $-clr-green-400,
+    "500": $-clr-green-500,
+    "700": $-clr-green-700,
+  ),
+);
+
+// contextual color tokens
+$color-neutral-100: var(--neutral-100);
+$color-neutral-900: var(--neutral-900);
+$color-accent-300: var(--accent-300);
+$color-accent-400: var(--accent-400);
+$color-accent-500: var(--accent-500);
+$color-primary-100: var(--primary-100);
+$color-primary-200: var(--primary-200);
+$color-primary-400: var(--primary-400);
+$color-primary-500: var(--primary-500);
+$color-primary-700: var(--primary-700);
+
+$color-overlay: $-clr-black-overlay;

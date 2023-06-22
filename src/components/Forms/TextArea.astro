@@ -1,0 +1,15 @@
+---
+export interface Props {
+	id: string;
+	label: string;
+    error: string;
+    rows?: string;
+}
+
+const { id, label, error, rows=4 } = Astro.props as Props;
+---
+<div class="input-group">
+    <textarea id={id} name={id} rows={rows} required></textarea>
+    <label for={id} class="label">{label}</label>
+    <span class="error">{error}</span>
+</div>

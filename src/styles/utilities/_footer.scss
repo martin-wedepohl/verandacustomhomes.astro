@@ -1,0 +1,27 @@
+@use "../abstracts/" as *;
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    text-align: center;
+    padding: $size-4;
+    box-shadow: 0 -1px 5px 0 $color-neutral-900;
+    font-size: .85rem;
+}
+
+@include mq('medium') {
+    footer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .copyright {
+        margin-right: auto;
+    }
+
+    .developer {
+        margin-left: auto;
+    }
+}

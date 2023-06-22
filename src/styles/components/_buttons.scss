@@ -1,0 +1,52 @@
+@use "../abstracts/" as *;
+
+.button {
+  display: inline-flex;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  text-transform: $button-text-transform;
+  font-weight: $button-font-weight;
+  padding: $button-padding;
+  border: $button-border;
+  border-radius: $button-border-radius;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: background-color 250ms ease, color 250ms ease;
+  }
+
+  &[data-type="accent"] {
+    background-color: $button-accent-background;
+    color: $button-accent-color;
+    border: 1px solid transparent;
+
+    &:is(:hover, :focus-visible) {
+      background-color: $button-accent-background-hover;
+      color: $button-accent-color-hover;
+      border: 1px solid $button-accent-background;
+    }
+  }
+
+  &[data-type="primary"] {
+    background-color: $color-primary-700;
+    color: $color-neutral-100;
+    border: 1px solid transparent;
+
+    &:is(:hover, :focus-visible) {
+      background-color: $color-neutral-100;
+      color: $color-neutral-900;
+      border: 1px solid $color-primary-700;
+    }
+  }
+
+  &[data-type="outline"] {
+    // should abstract out in sizes
+    --outline-size: 5px;
+
+    background-color: transparent;
+    outline: var(--outline-size) solid $color-neutral-100;
+    outline-offset: calc(var(--outline-size) * -1);
+    color: $color-neutral-100;
+  }
+}

@@ -1,0 +1,34 @@
+<footer>
+<div class="copyright">Copyright &copy; <span></span> Veranda Custom Homes</div>
+<div class="developer">
+    <a href="https://wedepohlengineering.com" target="_blank">Website designed by Martin Wedepohl</a>
+</div>
+</footer>
+<a href="#home" class="scroll-to-top"></a>
+
+<script>
+    // Show the scroll to top button if we are partially scrolled on page entry.
+    const scrollToTop = document.querySelector('.scroll-to-top');
+
+    // Add event listener to check scrolling position.
+    window.addEventListener('scroll', checkScroll);
+
+    // See if we are partially down the screen.
+    checkScroll();
+    
+    // Update the Copyright.
+    const today = new Date();
+    const copyright = document.querySelector('.copyright span');
+    copyright.textContent = today.getFullYear().toString();
+
+    /**
+     * Check the scroll position to show/hide the scroll to top link.
+     */
+    function checkScroll() {
+        if (window.scrollY >= 30) {
+            scrollToTop.classList.add('show');
+        } else {
+            scrollToTop.classList.remove('show');
+        }
+    }
+</script>

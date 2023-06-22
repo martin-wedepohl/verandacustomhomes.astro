@@ -11,5 +11,13 @@
   },
   "dependencies": {
     "astro": "^2.6.4"
+  },
+  "devDependencies": {
+    "astro-purgecss": "^2.2.0",
+    "postcss-preset-env": "^8.5.0",
+    "sass": "^1.63.4",
+    "stylelint": "^15.8.0",
+    "stylelint-config-recommended-scss": "^12.0.0",
+    "stylelint-config-standard": "^33.0.0"
   }
 }

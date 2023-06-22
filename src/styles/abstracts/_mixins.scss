@@ -1,0 +1,43 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:map";
+@use "breakpoints" as *;
+@use "tokens" as *;
+
+@mixin mq($size) {
+  @if map.has-key($breakpoints, $size) {
+    $breakpoint: map-get($breakpoints, $size);
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if number == meta.type-of($size) {
+    @if math.is-unitless($size) {
+      @error 'when using a number with @mq() make sure there is a unit';
+    } @else {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error '$breakpoints does not have #{$size}';
+  }
+}
+
+@mixin heading($fs, $color: $body-text-color) {
+  font-size: $fs;
+  color: $color;
+
+  font-family: $card-heading-font-family;
+  text-transform: $card-heading-text-transform;
+  letter-spacing: $card-heading-letter-spacing;
+  font-weight: $card-heading-font-weight;
+  line-height: $card-heading-line-height;
+}
+
+@function strip-unit($number) {
+    @if 'number' == type-of($number) and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}

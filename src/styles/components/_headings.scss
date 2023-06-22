@@ -1,0 +1,16 @@
+@use "../abstracts/" as *;
+
+.heading-1 {
+  @include heading($font-size-900, $color-primary-400);
+  margin-block: $size-4;
+}
+
+.heading-2 {
+  @include heading($font-size-800, $color-primary-400);
+  margin-block: $size-4;
+}
+
+.heading-3 {
+  @include heading($font-size-700, $color-primary-400);
+  margin-block: $size-4;
+}

@@ -1,0 +1,117 @@
+@use "../abstracts" as *;
+
+.site-header {
+  color: $site-header-color;
+  background-color: $site-header-background-color;
+  padding: $site-header-padding;
+  font-family: $site-header-font-family;
+  text-transform: uppercase;
+  box-shadow: 0 1px 5px 0 $color-neutral-900;
+
+  position: fixed;
+  z-index: $site-header-z-index;
+  inset: 0 0 auto 0;
+
+  &__layout {
+    display: flex;
+    align-items: $site-header-alignment;
+    gap: $size-4;
+    justify-content: $site-header-justification;
+
+    & .logo-link {
+      & .logo {
+        width: 50px;
+      }
+    }
+
+    & .email-link {
+      cursor: pointer;
+      text-transform: capitalize;
+      margin-right: auto;
+
+      &:hover,
+      &:focus {
+        color: red;
+      }
+    }
+
+    & .mobile-nav-toggle {
+      display: block;
+      border: none;
+      background-color: transparent;
+      position: fixed;
+      top: calc(($site-logo-height + 2 * $site-header-block-padding - 30px) / 2);
+      right: $site-header-inline-padding;
+      z-index: $navigation-toggle-z-index;
+
+      & svg {
+        & #hamburger-1,
+        & #hamburger-3 {
+          @media (prefers-reduced-motion: no-preference) {
+            transition: transform .25s ease-in-out;
+          }
+        }
+        & #hamburger-2 {
+          @media (prefers-reduced-motion: no-preference) {
+            transition: opacity .25s ease-in-out;
+          }
+        }
+      }
+
+      &[aria-expanded="true"] {
+
+        & svg {
+          & #hamburger-1 {
+            transform: rotate(-45deg) translate(-15px, 10px);
+          }
+
+          & #hamburger-2 {
+            opacity: 0;
+          }
+
+          & #hamburger-3 {
+            transform: rotate(45deg) translate(5px, -20px);
+          }
+        }
+      }
+    }
+
+    & .primary-navigation {
+      display: none;
+
+      &[data-visible] {
+        position: fixed;
+        display: block;
+        inset: calc($site-header-block-padding * 2 + $site-logo-height) 10% auto 10%;
+        z-index: $navigation-z-index;
+        background-color: white;
+        border-radius: 2em;
+        border: 1px solid $color-primary-700;
+        box-shadow:
+          0px 6px 5px rgb(0, 0, 0, 0.04),
+          0px 22px 18px rgb(0, 0, 0, 0.06),
+          0px 100px 80px rgb(0, 0, 0, 0.1);
+
+        & .nav {
+          flex-direction: column;
+          align-items: center;
+          margin-inline: auto;
+          gap: 2em;
+          padding-block: 2em;
+        }
+      }
+    }
+
+    @include mq(medium) {
+      flex-direction: row;
+      
+      & .mobile-nav-toggle {
+        display: none;
+      }
+
+      & .primary-navigation {
+        display: flex;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<a href="#main-content" class="skip-nav-link">Skip Navigation</a>
+<header class="site-header box-shadow-5">
+    <div class="site-header__layout">
+    <a href="/" class="logo-link">
+        <img class="logo" src="/images/veranda-custom-homes-logo-100x100.jpg" style="height: 50px" alt="Veranda Custom Homes Logo">
+    </a>
+    <a class="email-link" tabindex="0" href="#contact">Email Us</a>
+    <span class="visually-hidden">Menu</span>
+    <nav class="primary-navigation" id="primary-navigation">
+        <ul aria-label="Primary Navigation" role="list" class="nav flex-group">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle Navigation Menu">
+        <svg id="hamburger" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+        <line id="hamburger-1" x1="5" x2="25" y1="10" y2="10" stroke="#000000" stroke-linecap="round" stroke-width="2"/>
+        <line id="hamburger-2" x1="5" x2="25" y1="15" y2="15" stroke="#000000" stroke-linecap="round" stroke-width="2"/>
+        <line id="hamburger-3" x1="5" x2="25" y1="20" y2="20" stroke="#000000" stroke-linecap="round" stroke-width="2"/>
+        </svg>
+    </button>
+    </div>
+</header>
+
+<script>
+    const mobileWidth = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--mobile-width'));
+    const primaryHeader = document.querySelector('.site-header');
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const primaryNav = document.querySelector('.primary-navigation');
+
+    /**
+     * Called when the nabigation toggle button is clicked.
+     */
+    navToggle.addEventListener('click', () => {
+        primaryHeader.toggleAttribute('data-overlay');
+        primaryNav.toggleAttribute('data-visible');
+        primaryNav.hasAttribute('data-visible') ? navToggle.setAttribute('aria-expanded', true) : navToggle.setAttribute('aria-expanded', false);
+    });
+
+    /**
+     * Called when the window is resized
+     * so that the mobile menu is removed
+     * when the screen gets too large.
+     */
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= mobileWidth) {
+            primaryHeader.removeAttribute('data-overlay');
+            primaryNav.removeAttribute('data-visible');
+            navToggle.removeAttribute('aria-expanded');
+        }
+    });
+</script>

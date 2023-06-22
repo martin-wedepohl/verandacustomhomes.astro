@@ -19,3 +19,11 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# VSCode
+.vscode
+
+# Fonts and images
+public/fonts
+public/images
+public/*.svg

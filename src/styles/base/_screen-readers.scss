@@ -1,0 +1,32 @@
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.skip-nav-link {
+    position: absolute;
+    transform: translateY(-120%);
+    background-color: var(--neutral-100);
+    color: var(--neutral-900);
+    padding: .5em 1.5em;
+    border-radius: 0 0 .25em .25em;
+    left: .5em;
+    z-index: 10000;
+    @media (prefers-reduced-motion: no-preference) {
+        transition: transform .35s ease-in;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:focus {
+        transform: translateY(0%);
+    }
+
+}
