@@ -2,21 +2,32 @@
 import Input from "./Forms/Input.astro";
 import TextArea from "./Forms/TextArea.astro";
 ---
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <section class="container contact margin-block-end-12" id="contact">
     <h2 class="heading-2">Contact</h2>
     <p>Please fill out and send this form and Veranda Custom Homes Limited will get back to you as soon as possible.</p>
     <form action="" class="margin-block-8">
-        <Input id="name" label="Name" error="A name is required" />
-        <Input id="email" label="Email" error="A valid email address is required" />
-        <Input id="subject" label="Subject" error="A subject is required" />
-        <TextArea id="message" label="Message" error="A message is required" rows=10 />
-        <button type="submit" id="send-email" class="button" data-type="accent">Send</button>
+        <Input id="name" label="Name (required)" error="A name is required" />
+        <Input id="email" label="Email (required)" error="A valid email address is required" />
+        <Input id="subject" label="Subject (required)" error="A subject is required" />
+        <TextArea id="message" label="Message (required)" error="A message is required" rows=10 />
+        <div class="g-recaptcha" data-sitekey="6LeAFmonAAAAALlV-TPu7RULl8zkVgshucF2qkQm" data-callback="captchaVerified"></div>
+        <button type="submit" id="send-email" class="button" data-type="accent" disabled>Send</button>
         <p id="email-results" class="email-result"></p>
     </form>
 </section>
 
-<script>
+<script is:inline>
     /**
+     * Remove the disabled attribute from the send button once the captcha has been verified.
+     */
+    function captchaVerified() {
+        const sendEmailButton = document.querySelector('#send-email');
+        sendEmailButton.removeAttribute('disabled');
+    }
+</script>
+<script>
+   /**
      * Validate the email address
      *
      * @param {string} emailAddress Email address

@@ -49,4 +49,9 @@
     outline-offset: calc(var(--outline-size) * -1);
     color: $color-neutral-100;
   }
+
+  &:disabled {
+    cursor: default;
+    filter: grayscale(1);
+  }
 }
