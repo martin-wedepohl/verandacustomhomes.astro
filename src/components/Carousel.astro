@@ -1,0 +1,178 @@
+---
+---
+<section class="container carousel-container grid-auto-fit" [data-type="full-height"]>
+    <slot />
+</section>
+
+<script>
+    
+    function Carousel(container = undefined) {
+        this.container = document.querySelector(container) || document.body;
+        console.log(this.container);
+        this.overlay = this.makeElement('overlay');
+        this.current = this.makeElement('current');
+        this.closeOverlay = this.makeElement('close-overlay');
+        this.prev = this.makeElement('prev');
+        this.next = this.makeElement('next');
+
+        this.prev.addEventListener('click', () => {
+            this.showPrev();
+        });
+
+        this.next.addEventListener('click', () => {
+            this.showNext();
+        });
+
+        this.overlay.addEventListener('click', () => {
+            this.hideElement(this.overlay);
+            this.hideElement(this.current);
+            this.hideElement(this.closeOverlay);
+            this.hideElement(this.prev);
+            this.hideElement(this.next);
+            this.clearImg();
+        });
+        
+        this.closeOverlay.addEventListener('click', () => {
+            this.hideElement(this.overlay);
+            this.hideElement(this.current);
+            this.hideElement(this.closeOverlay);
+            this.hideElement(this.prev);
+            this.hideElement(this.next);
+            this.clearImg();
+        });
+        
+        this.carousels = this.container.querySelectorAll('.carousel-img');
+        this.numImages = this.carousels.length;
+        this.currentImage = 0;
+        this.carousels.forEach((carousel, id) => {
+            carousel.setAttribute('data-id', id);
+            carousel.addEventListener('click', e => {
+                const id = parseInt(e.target.getAttribute('data-id'));
+                this.setImg(id);
+                this.currentImage = id;
+                this.showElement(this.overlay);
+                this.showElement(this.current);
+                this.showElement(this.closeOverlay);
+                this.showElement(this.prev);
+                this.showElement(this.next);
+                
+            });
+        })
+    }
+
+    Carousel.prototype.makeElement = function(elementClass) {
+        const element = document.createElement('div');
+
+        element.classList.add(elementClass);
+
+        switch(elementClass) {
+            case 'close-overlay':
+                element.textContent = 'X';
+                break;
+            case 'prev':
+                element.textContent = '<';
+                break;
+            case 'next':
+                element.textContent = '>';
+                break;
+            case 'current':
+                element.classList.add('carousel-image');
+                const img = document.createElement('img');
+                element.append(img);
+                break;
+            default:
+                break;
+        }
+
+        const body = document.querySelector('body');
+        body.prepend(element);
+    
+        return element;
+    }
+    
+    Carousel.prototype.showElement = function(element) {
+            element.classList.add('show');
+    }
+    
+    Carousel.prototype.hideElement = function(element) {
+            element.classList.remove('show');
+    }
+
+    Carousel.prototype.setImg = function(img) {
+        const carouselImage = document.querySelector('.current.carousel-image');
+        carouselImage.classList.remove('show');
+        const timeout = this.isReduced() ? 0 : this.isMobile() ? 0 : 300;
+        setTimeout(() => {
+            const currentImg = carouselImage.querySelector('.current.carousel-image img');
+            let src = this.carousels[img].getAttribute('src');
+            src = src.replace('-small', '');
+            currentImg.setAttribute('src', src);
+            carouselImage.classList.add('show');
+        }, timeout);
+    }
+    
+    Carousel.prototype.clearImg = function() {
+        const carouselImage = document.querySelector('.current.carousel-image');
+        carouselImage.classList.remove('show');
+        const timeout = this.isReduced() ? 0 : this.isMobile() ? 0 : 300;
+        setTimeout(() => {
+            const currentImg = carouselImage.querySelector('.current.carousel-image img');
+            currentImg.setAttribute('src', '');
+        }, timeout);
+    }
+
+    Carousel.prototype.showPrev = function() {
+        this.currentImage--;
+        if (this.currentImage < 0) {
+            this.currentImage = this.numImages - 1;
+        }
+
+        this.setImg(this.currentImage);
+    }
+    
+    Carousel.prototype.showNext = function() {
+        this.currentImage++;
+        if (this.currentImage >= this.numImages) {
+            this.currentImage = 0;
+        }
+        
+        this.setImg(this.currentImage);
+    }
+
+    Carousel.prototype.isReduced = function() {
+        return window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+    }
+
+    Carousel.prototype.isMobile = function() {
+        if (
+            navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/webOS/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/iPad/i) ||
+            navigator.userAgent.match(/iPod/i) ||
+            navigator.userAgent.match(/BlackBerry/i) ||
+            navigator.userAgent.match(/Windows Phone/i)
+        ) {
+            return true;
+        }
+
+        return false;
+    }
+    
+    new Carousel('.carousel-container');
+</script>
+
+<style>
+    .carousel-container {
+      position: relative;
+      margin-top: var(--margin-for-header);
+      margin-bottom: calc(var(--margin-for-footer-narrow) * 2);
+      isolation: isolate;
+    }
+
+    @media (min-width: 45em) {
+        .carousel-container {
+            margin-bottom: calc(var(--margin-for-footer-wide) * 2);
+        }
+    }
+</style>

@@ -105,6 +105,10 @@ $site-logo-width: $logo-width;
 $site-header-height: calc($site-logo-height + 2 * $site-header-block-padding);
 $site-header-z-index: 1000;
 
+// Site footer
+$site-footer-narrow-height: 4.75rem;
+$site-footer-wide-height: 3.5rem;
+
 // Navigation
 $navigation-color: $site-header-color;
 $navigation-color-hover: $color-primary-400;

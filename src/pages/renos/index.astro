@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Carousel from "../../components/Carousel.astro";
+---
+<Layout
+	title="Veranda Custom Homes - Renovations",
+	description="Looking for a custom home builder or renovation expert that you can fully trust? We have years of proven construction experience in the Vancouver, BC area."
+>
+    <main id="main-content" style="position:relative;">
+      <Carousel>
+        <div class="carousel-item">
+          <img src="/images/renos/kitchen-reno-1-small.jpg" alt="Kitchen Renovation" class="carousel-img">
+        </div>
+        <div class="carousel-item">
+          <img src="/images/renos/kitchen-reno-2-small.jpg" alt="Kitchen Renovation" class="carousel-img">
+        </div>
+        <div class="carousel-item">
+          <img src="/images/renos/bathroom-reno-1-small.jpg" alt="Bathroom Renovation" class="carousel-img">
+        </div>
+        <div class="carousel-item">
+          <img src="/images/renos/bathroom-reno-2-small.jpg" alt="Bathroom Renovation" class="carousel-img">
+        </div>
+        <div class="carousel-item">
+          <img src="/images/renos/bathroom-reno-3-small.jpg" alt="Bathroom Renovation" class="carousel-img">
+        </div>
+      </Carousel>
+    </main>
+</Layout>
+
+<style>
+  .carousel-item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-img {
+    width: 15.625em;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+  }
+</style>

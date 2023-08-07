@@ -1,6 +1,10 @@
 @use "../abstracts" as *;
 
 :root {
+  --margin-for-header: #{$site-header-height};
+  --margin-for-footer-wide: #{$site-footer-wide-height};
+  --margin-for-footer-narrow: #{$site-footer-narrow-height};
+
   @each $color, $shade-map in $colors {
     @each $shade, $value in $shade-map {
       --#{$color}-#{$shade}: #{$value};
