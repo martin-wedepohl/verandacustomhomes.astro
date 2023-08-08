@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+
 .overlay,
 .close-overlay,
 .prev,
@@ -10,7 +12,6 @@
         visibility: visible;
     }
 }
-
 
 .overlay {
     position: fixed;
@@ -31,7 +32,7 @@
 
 .carousel-image {
     position: fixed;
-    inset: 5em;
+    inset: 1em;
     opacity: 0;
     z-index: -1;
     visibility: hidden;
@@ -102,4 +103,10 @@
 
 .next {
     right: .25em;
+}
+
+@include mq(medium) {
+    .carousel-image {
+        inset: 5em;
+    }
 }
