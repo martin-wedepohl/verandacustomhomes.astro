@@ -103,10 +103,13 @@
         carouselImage.classList.remove('show');
         const timeout = this.isReduced() ? 0 : this.isMobile() ? 0 : 300;
         setTimeout(() => {
+            const useSmall = this.isMobile() || window.innerWidth < 500;
             const currentImg = carouselImage.querySelector('.current.carousel-image img');
-            let src = this.carousels[img].getAttribute('src');
-            src = src.replace('-small', '');
+            const src = useSmall ? this.carousels[img].getAttribute('src') : this.carousels[img].getAttribute('data-full');
+            const alt = this.carousels[img].getAttribute('alt');
             currentImg.setAttribute('src', src);
+            currentImg.setAttribute('alt', alt);
+            currentImg.setAttribute('title', alt);
             carouselImage.classList.add('show');
         }, timeout);
     }

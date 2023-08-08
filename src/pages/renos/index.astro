@@ -1,6 +1,16 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Carousel from "../../components/Carousel.astro";
+
+const images = [
+  { src: "kitchen-reno-1-small.jpg", alt: "Kitchen Renovation", full: "kitchen-reno-1.jpg", width: 186, height: 167 },
+  { src: "kitchen-reno-2-small.jpg", alt: "Kitchen Renovation", full: "kitchen-reno-2.jpg", width: 250, height: 167 },
+  { src: "bathroom-reno-1-small.jpg", alt: "Bathroom Renovation", full: "bathroom-reno-1.jpg", width: 250, height: 167 },
+  { src: "bathroom-reno-2-small.jpg", alt: "Bathroom Renovation", full: "bathroom-reno-2.jpg", width: 250, height: 167 },
+  { src: "bathroom-reno-3-small.jpg", alt: "Bathroom Renovation", full: "bathroom-reno-3.jpg", width: 250, height: 167 },
+];
+
+const path = "/images/renos/";
 ---
 <Layout
 	title="Veranda Custom Homes - Renovations",
@@ -8,21 +18,11 @@ import Carousel from "../../components/Carousel.astro";
 >
     <main id="main-content" style="position:relative;">
       <Carousel>
-        <div class="carousel-item">
-          <img src="/images/renos/kitchen-reno-1-small.jpg" alt="Kitchen Renovation" class="carousel-img">
-        </div>
-        <div class="carousel-item">
-          <img src="/images/renos/kitchen-reno-2-small.jpg" alt="Kitchen Renovation" class="carousel-img">
-        </div>
-        <div class="carousel-item">
-          <img src="/images/renos/bathroom-reno-1-small.jpg" alt="Bathroom Renovation" class="carousel-img">
-        </div>
-        <div class="carousel-item">
-          <img src="/images/renos/bathroom-reno-2-small.jpg" alt="Bathroom Renovation" class="carousel-img">
-        </div>
-        <div class="carousel-item">
-          <img src="/images/renos/bathroom-reno-3-small.jpg" alt="Bathroom Renovation" class="carousel-img">
-        </div>
+        {images.map(image => (
+          <div class="carousel-item">
+            <img src={path + image.src} alt={image.alt} data-full={path + image.full} class="carousel-img" loading="lazy" width={image.width} height={image.height} />
+          </div>
+        ))}
       </Carousel>
     </main>
 </Layout>
