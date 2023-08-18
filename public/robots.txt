@@ -1,0 +1,12 @@
+User-Agent: *
+
+Disallow: /*.php
+Disallow: /.well-known
+Disallow: /Astro20230621
+Disallow: /Astro20230807
+Disallow: /Astro20230818
+Disallow: /AstroUpload
+Disallow: /Backup
+Disallow: /cgi-bin
+
+Sitemap: https://verandacustomhomes.ca/sitemap.xml

@@ -7,6 +7,11 @@
 <script>
     
     function Carousel(container = undefined) {
+
+        if (this.isMobile()) {
+            return;
+        }
+
         this.container = document.querySelector(container) || document.body;
         console.log(this.container);
         this.overlay = this.makeElement('overlay');
