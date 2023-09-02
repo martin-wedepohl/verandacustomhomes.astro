@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Carousel from "../../components/Carousel.astro";
+import Contact from "../../components/Contact.astro";
+
+const images = [
+  { src: "knowles-residence-stairs-down-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Stairs Renovation", full: "knowles-residence-stairs-down-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
+  { src: "knowles-residence-stairs-up-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Stairs Renovation", full: "knowles-residence-stairs-up-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
+  { src: "knowles-residence-stairs-top-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Stairs Renovation", full: "knowles-residence-stairs-top-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
+  { src: "knowles-residence-kitchen-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Kitchen Renovation", full: "knowles-residence-kitchen-before-after-veranda-custom-homes.jpg", style: "object-position: left", width: 256, height: 171 },
+  { src: "knowles-residence-fireplace-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Fireplace Renovation", full: "knowles-residence-fireplace-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
+  { src: "knowles-residence-bath-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Bathroom Renovation", full: "knowles-residence-bath-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
+  { src: "knowles-residence-bathroom-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Bathroom Renovation", full: "knowles-residence-bathroom-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
+  { src: "knowles-residence-bedroom-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Bathroom Renovation", full: "knowles-residence-bedroom-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
+  { src: "knowles-residence-closets-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Closet Renovation", full: "knowles-residence-closets-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
+  { src: "knowles-residence-livingroom-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Living Room Renovation", full: "knowles-residence-livingroom-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
+  { src: "livingroom-reno-vancouver-3-medium-veranda-custom-homes.jpg", alt: "Living Room Renovation", full: "livingroom-reno-vancouver-3-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
+  { src: "livingroom-reno-vancouver-1-medium-veranda-custom-homes.jpg", alt: "Living Room Renovation", full: "livingroom-reno-vancouver-1-veranda-custom-homes.jpg", style: "object-position: right", width: 210, height: 256 },
+  { src: "livingroom-reno-vancouver-2-medium-veranda-custom-homes.jpg", alt: "Living Room Renovation", full: "livingroom-reno-vancouver-2-veranda-custom-homes.jpg", style: "object-position: right", width: 171, height: 256 },
+];
+
+const path = "/images/renovations/";
+---
+<Layout
+	title="Veranda Custom Homes - Renovations",
+	description="Looking for a custom home builder or renovations expert that you can fully trust? We have years of proven construction experience in the Vancouver, BC area."
+>
+    <main id="main-content" style="position:relative;">
+      <Carousel>
+        {images.map(image => (
+          <div class="carousel-item">
+            <img src={path + image.src} alt={image.alt} data-full={path + image.full} class="carousel-img" loading="lazy" style={image.style} width={image.width} height={image.height} />
+          </div>
+        ))}
+      </Carousel>
+      <Contact />
+    </main>
+</Layout>
+
+<style>
+  .carousel-item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Carousel from "../../components/Carousel.astro";
+import Contact from "../../components/Contact.astro";
+
+const images = [
+  { src: "kitchen-renovation-2-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-2-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-5-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-5-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-6-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-6-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-7-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-7-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-8-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-8-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-9-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-9-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-10-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-10-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-11-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-11-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-12-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-12-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-13-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-13-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-14-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-14-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-renovation-15-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-15-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "knowles-residence-kitchen-medium-veranda-custom-homes.jpg", alt: "Knowles Residence Kitchen Renovation", full: "knowles-residence-kitchen-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-reno-1-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-reno-1-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-reno-2-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-reno-2-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "kitchen-reno-3-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-reno-3-veranda-custom-homes.jpg", width: 144, height: 256 },
+];
+
+const path = "/images/kitchens/";
+---
+<Layout
+	title="Veranda Custom Homes - Kitchens",
+	description="Looking for a custom home builder or kitchen renovation expert that you can fully trust? We have years of proven construction experience in the Vancouver, BC area."
+>
+    <main id="main-content" style="position:relative;">
+      <Carousel>
+        {images.map(image => (
+          <div class="carousel-item">
+            <img src={path + image.src} alt={image.alt} data-full={path + image.full} class="carousel-img" loading="lazy" width={image.width} height={image.height} />
+          </div>
+        ))}
+      </Carousel>
+      <Contact />
+    </main>
+</Layout>
+
+<style>
+  .carousel-item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+  }
+</style>
