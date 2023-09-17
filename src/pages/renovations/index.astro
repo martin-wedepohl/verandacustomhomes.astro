@@ -14,18 +14,32 @@ const images = [
   { src: "knowles-residence-bedroom-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Bathroom Renovation", full: "knowles-residence-bedroom-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
   { src: "knowles-residence-closets-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Closet Renovation", full: "knowles-residence-closets-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
   { src: "knowles-residence-livingroom-before-after-medium-veranda-custom-homes.jpg", alt: "Knowles Living Room Renovation", full: "knowles-residence-livingroom-before-after-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
-  { src: "livingroom-reno-vancouver-3-medium-veranda-custom-homes.jpg", alt: "Living Room Renovation", full: "livingroom-reno-vancouver-3-veranda-custom-homes.jpg", style: "object-position: right", width: 256, height: 171 },
-  { src: "livingroom-reno-vancouver-1-medium-veranda-custom-homes.jpg", alt: "Living Room Renovation", full: "livingroom-reno-vancouver-1-veranda-custom-homes.jpg", style: "object-position: right", width: 210, height: 256 },
-  { src: "livingroom-reno-vancouver-2-medium-veranda-custom-homes.jpg", alt: "Living Room Renovation", full: "livingroom-reno-vancouver-2-veranda-custom-homes.jpg", style: "object-position: right", width: 171, height: 256 },
+  { src: "kitchen-before-after-1-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-before-after-1-veranda-custom-homes.jpg", width: 256, height: 124 },
+  { src: "kitchen-before-after-2-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-before-after-2-veranda-custom-homes.jpg", width: 256, height: 124 },
+  { src: "kitchen-before-after-3-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-before-after-3-veranda-custom-homes.jpg", width: 256, height: 124 },
+  { src: "livingroom-reno-vancouver-3-medium-veranda-custom-homes.jpg", alt: "Living Room Renovation", full: "livingroom-reno-vancouver-3-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "livingroom-reno-vancouver-1-medium-veranda-custom-homes.jpg", alt: "Living Room Renovation", full: "livingroom-reno-vancouver-1-veranda-custom-homes.jpg", width: 210, height: 256 },
+  { src: "livingroom-reno-vancouver-2-medium-veranda-custom-homes.jpg", alt: "Living Room Renovation", full: "livingroom-reno-vancouver-2-veranda-custom-homes.jpg", width: 171, height: 256 },
+  { src: "dalton-fireplace-media-room-custom-shelves-medium-veranda-custom-homes.jpg", alt: "Living Room Renovation", full: "dalton-fireplace-media-room-custom-shelves-medium-veranda-custom-homes.jpg", width: 142, height: 256 },
 ];
 
 const path = "/images/renovations/";
+
+const title = "Veranda Custom Homes - Renovations";
+const description = "Veranda Custom Homes know important it is to be able to refresh an existing home to current standards and trends.";
 ---
-<Layout
-	title="Veranda Custom Homes - Renovations",
-	description="Looking for a custom home builder or renovations expert that you can fully trust? We have years of proven construction experience in the Vancouver, BC area."
->
+<Layout title={title}, description={description} >
     <main id="main-content" style="position:relative;">
+      <section class="container">
+        <h1 class="heading-3 padding-block-start-6">{title}</h1>
+        <p class="margin-block-end-6">
+          To be able to refresh an existing home to current standards. 
+          This is something which takes an eye for current trends and how to integrate them into existing.
+        </p>
+        <p class="margin-block-end-6">
+          View our portfolio of renovations below.
+        </p>    
+      </section>
       <Carousel>
         {images.map(image => (
           <div class="carousel-item">

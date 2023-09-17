@@ -6,6 +6,7 @@ Disallow: /Astro20230621
 Disallow: /Astro20230807
 Disallow: /Astro20230818
 Disallow: /Astro20230902
+Disallow: /Astro20230917
 Disallow: /AstroUpload
 Disallow: /Backup
 Disallow: /cgi-bin

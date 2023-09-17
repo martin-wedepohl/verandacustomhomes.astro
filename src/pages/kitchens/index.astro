@@ -20,15 +20,27 @@ const images = [
   { src: "kitchen-reno-1-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-reno-1-veranda-custom-homes.jpg", width: 256, height: 171 },
   { src: "kitchen-reno-2-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-reno-2-veranda-custom-homes.jpg", width: 256, height: 171 },
   { src: "kitchen-reno-3-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-reno-3-veranda-custom-homes.jpg", width: 144, height: 256 },
+  { src: "kitchen-renovation-22-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-22-veranda-custom-homes.jpg", width: 144, height: 256 },
+  { src: "kitchen-renovation-3-medium-veranda-custom-homes.jpg", alt: "Kitchen Renovation", full: "kitchen-renovation-3-veranda-custom-homes.jpg", width: 144, height: 256 },
 ];
 
 const path = "/images/kitchens/";
+
+const title = "Veranda Custom Homes - Kitchens";
+const description = "Veranda Custom Homes knows you’ll be spending a great amount of your time in the kitchen. We focus durability and style into a great family meeting area.";
 ---
-<Layout
-	title="Veranda Custom Homes - Kitchens",
-	description="Looking for a custom home builder or kitchen renovation expert that you can fully trust? We have years of proven construction experience in the Vancouver, BC area."
->
+<Layout title={title}, description={description} >
     <main id="main-content" style="position:relative;">
+      <section class="container">
+        <h1 class="heading-3 padding-block-start-6">{title}</h1>
+        <p class="margin-block-end-6">
+          This is an area where we understand you’ll be spending a great amount of your time. 
+          This is where we focus durability and style into a great family meeting area.
+        </p>
+        <p class="margin-block-end-6">
+          View our portfolio of kitchen new builds and renovations below.
+        </p>    
+      </section>
       <Carousel>
         {images.map(image => (
           <div class="carousel-item">

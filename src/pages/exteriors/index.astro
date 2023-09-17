@@ -4,6 +4,11 @@ import Carousel from "../../components/Carousel.astro";
 import Contact from "../../components/Contact.astro";
 
 const images = [
+  { src: "bond-extensions-medium-veranda-custom-homes.jpg", alt: "Bond Extensions", full: "bond-extensions-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "treehouse-landscape-1-medium-veranda-custom-homes.jpg", alt: "Treehouse", full: "treehouse-landscape-1-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "treehouse-landscape-2-medium-veranda-custom-homes.jpg", alt: "Treehouse", full: "treehouse-landscape-2-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "treehouse-landscape-3-medium-veranda-custom-homes.jpg", alt: "Treehouse", full: "treehouse-landscape-3-veranda-custom-homes.jpg", width: 256, height: 171 },
+  { src: "treehouse-landscape-4-medium-veranda-custom-homes.jpg", alt: "Treehouse", full: "treehouse-landscape-4-veranda-custom-homes.jpg", width: 256, height: 171 },
   { src: "landscape-vancouver-1-medium-veranda-custom-homes.jpg", alt: "Landscape", full: "landscape-vancouver-1-veranda-custom-homes.jpg", width: 256, height: 171 },
   { src: "landscape-vancouver-2-medium-veranda-custom-homes.jpg", alt: "Landscape", full: "landscape-vancouver-2-veranda-custom-homes.jpg", width: 256, height: 171 },
   { src: "landscape-vancouver-3-medium-veranda-custom-homes.jpg", alt: "Landscape", full: "landscape-vancouver-3-veranda-custom-homes.jpg", width: 256, height: 171 },
@@ -12,20 +17,26 @@ const images = [
   { src: "landscape-vancouver-6-medium-veranda-custom-homes.jpg", alt: "Landscape", full: "landscape-vancouver-6-veranda-custom-homes.jpg", width: 256, height: 171 },
   { src: "landscape-vancouver-7-medium-veranda-custom-homes.jpg", alt: "Landscape", full: "landscape-vancouver-7-veranda-custom-homes.jpg", width: 256, height: 171 },
   { src: "landscape-vancouver-8-medium-veranda-custom-homes.jpg", alt: "Landscape", full: "landscape-vancouver-8-veranda-custom-homes.jpg", width: 256, height: 171 },
-  { src: "treehouse-landscape-1-medium-veranda-custom-homes.jpg", alt: "Treehouse", full: "treehouse-landscape-1-veranda-custom-homes.jpg", width: 256, height: 171 },
-  { src: "treehouse-landscape-2-medium-veranda-custom-homes.jpg", alt: "Treehouse", full: "treehouse-landscape-2-veranda-custom-homes.jpg", width: 256, height: 171 },
-  { src: "treehouse-landscape-3-medium-veranda-custom-homes.jpg", alt: "Treehouse", full: "treehouse-landscape-3-veranda-custom-homes.jpg", width: 256, height: 171 },
-  { src: "treehouse-landscape-4-medium-veranda-custom-homes.jpg", alt: "Treehouse", full: "treehouse-landscape-4-veranda-custom-homes.jpg", width: 256, height: 171 },
-  { src: "bond-extensions-medium-veranda-custom-homes.jpg", alt: "Bond Extensions", full: "bond-extensions-veranda-custom-homes.jpg", width: 256, height: 171 },
 ];
 
 const path = "/images/exteriors/";
+
+const title = "Veranda Custom Homes - Exteriors";
+const description = "Veranda Custom Homes knows how important it is to have an understanding of wet environments as in our climate for lasting home building and renovations";
 ---
-<Layout
-	title="Veranda Custom Homes - Exteriors",
-	description="Looking for a custom home builder or renovations expert that you can fully trust? We have years of proven construction experience in the Vancouver, BC area."
->
+<Layout title={title}, description={description} >
     <main id="main-content" style="position:relative;">
+      <section class="container">
+        <h1 class="heading-3 padding-block-start-6">{title}</h1>
+        <p class="margin-block-end-6">
+          It’s important to have an understanding of wet environment as in our climate.
+          We’ve worked with many situations dealing with keeping homes dry and breathable to suit.
+        </p>
+        <p class="margin-block-end-6">
+          View our portfolio of exterior new builds and renovations below.
+        </p>    
+      </section>
+
       <Carousel>
         {images.map(image => (
           <div class="carousel-item">

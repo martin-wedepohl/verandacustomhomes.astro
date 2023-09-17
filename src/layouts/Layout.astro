@@ -28,15 +28,3 @@ const { title, description } = Astro.props as Props;
 		<Footer />
 	</body>
 </html>
-
-<script>
-	// Automate number of years that Jason has been working since
-	const startYear = 1988;
-	const today = new Date();
-	const years = today.getFullYear() - startYear;
-	const workingYears = document.querySelectorAll('.working-years');
-	workingYears.forEach(year => {
-		year.textContent = years.toString();
-	});
-
-</script>

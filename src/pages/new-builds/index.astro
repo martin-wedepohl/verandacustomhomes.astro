@@ -14,12 +14,26 @@ const images = [
 ];
 
 const path = "/images/new-builds/";
+
+const startYear = 1993;
+const today = new Date();
+const years = today.getFullYear() - startYear;
+
+const title = "Veranda Custom Homes - New Builds";
+const description = `Veranda Custom Homes has spent {years}yrs combining our interests to bring you the experience and insight necessary to custom build new homes.`;
 ---
-<Layout
-	title="Veranda Custom Homes - New Builds",
-	description="Looking for a custom home builder or renovations expert that you can fully trust? We have years of proven construction experience in the Vancouver, BC area."
->
+<Layout title={title}, description={description} >
     <main id="main-content" style="position:relative;">
+      <section class="container">
+        <h1 class="heading-3 padding-block-start-6">{title}</h1>
+        <p class="margin-block-end-6">
+          We’ve spent {years}yrs combining our interests to bring you the experience and insight necessary to build. 
+          Cultivated relationships with trades who share in our desire to build to last. 
+        </p>
+        <p class="margin-block-end-6">
+          View our portfolio of custom home new builds below.
+        </p>    
+      </section>
       <Carousel>
         {images.map(image => (
           <div class="carousel-item">

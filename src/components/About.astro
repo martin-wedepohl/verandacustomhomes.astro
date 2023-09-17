@@ -1,4 +1,7 @@
 ---
+const startYear = 1988;
+const today = new Date();
+const years = today.getFullYear() - startYear;
 ---
 <section class="container about" id="about">
     <h2 class="heading-2">About Us</h2>
@@ -15,7 +18,7 @@
         <div class="card">
         	<div class="card__heading">Jason Latschislaw</div>
             <div class="card__content">
-                <p>I’ve been a carpenter for <span class="working-years"></span> years. I pursued a career in building homes and carpentry as it’s always been my passion to work with my hands and create quality builds.</p>
+                <p>I’ve been a carpenter for {years} years. I pursued a career in building homes and carpentry as it’s always been my passion to work with my hands and create quality builds.</p>
                 <p>I met Emanuel in 2001 and I’ve worked for/with him since.</p>
             </div>
         </div>
