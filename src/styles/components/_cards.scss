@@ -18,6 +18,12 @@
     box-shadow: $card-box-shadow-hover;
   }
 
+  &__image {
+    width: 200px;
+    height: 191px;
+    margin-inline: auto;
+  }
+
   &__heading {
     @include heading($card-heading-font-size, $card-heading-color-default);
   }
